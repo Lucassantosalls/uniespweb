@@ -4,10 +4,9 @@ import br.edu.uniesp.api.model.Filme;
 import br.edu.uniesp.api.model.Genero;
 import br.edu.uniesp.api.service.GeneroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/genero")
@@ -20,5 +19,20 @@ public class GeneroResource {
     public Genero salvar(@RequestBody Genero genero){
         genero = service.salvar(genero);
         return genero;
+    }
+
+    @GetMapping
+    public List<Genero> listar(){
+        return  service.listar();
+    }
+
+    @DeleteMapping("{id}")
+    public void remover(@PathVariable int id){
+        service.deletar(id);
+    }
+
+    @PutMapping()
+    public Genero atualizar(@RequestBody Genero genero) throws Exception {
+        return service.atualizar(genero);
     }
 }

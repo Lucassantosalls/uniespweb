@@ -28,6 +28,7 @@ public class FilmeResource {
 
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id){
+
         service.deletar(id);
     }
 

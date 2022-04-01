@@ -15,14 +15,17 @@ public class FilmeService {
 
 
     public Filme salvar(Filme filme){
+
         return repository.save(filme);
     }
 
     public void deletar(int id){
+
         repository.deleteById(id);
     }
 
     public List<Filme> listar(){
+
         return repository.findAll();
     }
 
