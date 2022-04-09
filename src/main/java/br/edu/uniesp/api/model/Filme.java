@@ -1,9 +1,9 @@
 package br.edu.uniesp.api.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Filme implements Serializable {
@@ -13,6 +13,7 @@ public class Filme implements Serializable {
     private Integer id;
 
     private String titulo;
+
 
     public Integer getId() {
         return id;
@@ -29,4 +30,5 @@ public class Filme implements Serializable {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
 }
