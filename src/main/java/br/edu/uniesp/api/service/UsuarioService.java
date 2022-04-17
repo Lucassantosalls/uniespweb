@@ -12,7 +12,6 @@ public class UsuarioService {
 
     @Autowired
     UsuarioRepository repository;
-    Usuario usuario1;
 
     public Usuario salvar(Usuario usuario ){
 

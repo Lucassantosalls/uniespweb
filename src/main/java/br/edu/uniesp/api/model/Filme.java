@@ -14,6 +14,8 @@ public class Filme implements Serializable {
 
     private String titulo;
 
+    @ManyToOne
+    private Genero genero;
 
     public Integer getId() {
         return id;
