@@ -1,11 +1,14 @@
 package br.edu.uniesp.api.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
 public class Filme implements Serializable {
 
     @Id
@@ -16,21 +19,4 @@ public class Filme implements Serializable {
 
     @ManyToOne
     private Genero genero;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
 }

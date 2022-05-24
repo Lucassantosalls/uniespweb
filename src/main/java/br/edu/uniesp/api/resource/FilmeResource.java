@@ -5,6 +5,7 @@ import br.edu.uniesp.api.service.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.List;
 
 @RestController
@@ -37,4 +38,9 @@ public class FilmeResource {
         return service.atualizar(filme);
     }
 
+    @GetMapping("/titulo/{titulo}")
+    public List<Filme> listarFilmePorTitulo(@PathVariable String titulo){
+
+        return service.findFilmeByTitulo(titulo);
+    }
 }

@@ -36,4 +36,7 @@ public class FilmeService {
         throw new Exception("ID Não encontrado!");
     }
 
+    public List<Filme> findFilmeByTitulo(String titulo){
+        return repository.findByTitulo(titulo);
+    }
 }
