@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.util.List;
-
+@CrossOrigin(maxAge = 3000)
 @RestController
 @RequestMapping("/filme")
 public class FilmeResource {
