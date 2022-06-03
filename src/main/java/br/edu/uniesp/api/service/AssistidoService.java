@@ -36,4 +36,9 @@ public class AssistidoService {
         }
         throw new Exception("ID Não encontrado!");
     }
+
+    public void salvarComONome(Assistidos assistidos,String nome){
+        assistidos.setNomeDoFilme(nome);
+        repository.save(assistidos);
+    }
 }

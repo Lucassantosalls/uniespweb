@@ -17,6 +17,8 @@ public class Filme implements Serializable {
 
     private String titulo;
 
+    private boolean assistido;
+
     @ManyToOne
     private Genero genero;
 }

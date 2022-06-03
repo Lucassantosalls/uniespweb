@@ -15,8 +15,5 @@ public class Assistidos {
     @GeneratedValue
     private Integer id;
 
-    private  String nome;
-
-    @ManyToOne
-    private Filme filme;
+    private String nomeDoFilme;
 }
