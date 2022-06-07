@@ -1,12 +1,11 @@
 package br.edu.uniesp.api.service;
 
-import br.edu.uniesp.api.model.Assistidos;
 import br.edu.uniesp.api.model.Filme;
-import br.edu.uniesp.api.repository.AssistidosRepository;
 import br.edu.uniesp.api.repository.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.ClientInfoStatus;
 import java.util.List;
 
 @Service
@@ -14,21 +13,13 @@ public class FilmeService {
 
     @Autowired
     private FilmeRepository repository;
-    @Autowired
-    private AssistidosRepository assistidosRepository;
 
 
 
     public Filme salvar(Filme filme){
-        Assistidos assistidos = null;
 
-        if (filme.isAssistido()){
-            assistidos.setNomeDoFilme(filme.getTitulo());
-            assistidosRepository.save(assistidos);
-            return repository.save(filme);
-        }else{
-            return repository.save(filme);
-        }
+        return repository.save(filme);
+
     }
 
     public void deletar(int id){
@@ -50,6 +41,10 @@ public class FilmeService {
 
     public List<Filme> findFilmeByTitulo(String titulo){
         return repository.findByTitulo(titulo);
+    }
+
+    public List<Filme> findByAssistido(){
+        return repository.findByAssistido(true);
     }
 
 }

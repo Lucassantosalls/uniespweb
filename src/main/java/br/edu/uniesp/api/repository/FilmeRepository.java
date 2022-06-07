@@ -13,6 +13,8 @@ public interface FilmeRepository extends JpaRepository<Filme,Integer> {
 
     List<Filme> findByTitulo(String titulo);
 
+    List<Filme> findByAssistido(boolean tipo);
+
     @Query("select f from Filme f where f.genero.nome like %:genero%")
     List<Filme> buscarPorGenero(@Param("genero") String genero);
 }

@@ -43,4 +43,9 @@ public class FilmeResource {
 
         return service.findFilmeByTitulo(titulo);
     }
+
+    @GetMapping("/assistido/")
+    public List<Filme> listarPorAssistido(){
+        return service.findByAssistido();
+    }
 }
